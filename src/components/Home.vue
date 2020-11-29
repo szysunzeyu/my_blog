@@ -2,66 +2,138 @@
   <el-container>
     <el-header class="home_menu">
       <el-row type="flex">
-        <el-col :sm="{span:18}" :xs="{span:18}" :span="4">
-          <a class="title_a" href="#">
+        <el-col
+          :sm="{span:18}"
+          :xs="{span:18}"
+          :span="4"
+        >
+          <a
+            class="title_a"
+            href="#"
+          >
             <h1>SZY.Halo</h1>
           </a>
         </el-col>
         <!--        头部菜单栏-->
-        <el-col :span="20" class="hidden-sm-and-down head_div">
+        <el-col
+          :span="20"
+          class="hidden-sm-and-down head_div"
+        >
           <el-row>
-            <el-col :span="3" class="vertical">
-              <el-link icon="el-icon-s-home" type="primary" href="/Welcome">首页</el-link>
+            <el-col
+              :span="3"
+              class="vertical"
+            >
+              <el-link
+                icon="el-icon-s-home"
+                type="primary"
+                href="/Welcome"
+              >首页</el-link>
             </el-col>
-            <el-col :span="3" class="vertical">
-              <el-link icon="el-icon-brush" href="/Project">项目</el-link>
+            <el-col
+              :span="3"
+              class="vertical"
+            >
+              <el-link
+                icon="el-icon-brush"
+                href="/Project"
+              >项目</el-link>
             </el-col>
-            <el-col :span="3" class="vertical">
-              <el-link icon="el-icon-chat-dot-round" href="/About" type="info">关于</el-link>
+            <el-col
+              :span="3"
+              class="vertical"
+            >
+              <el-link
+                icon="el-icon-chat-dot-round"
+                href="/About"
+                type="success"
+              >关于</el-link>
+            </el-col>
+            <el-col
+              :span="3"
+              class="vertical"
+            >
+              <el-link
+                icon="el-icon-monitor"
+                type="warning"
+                href="/Login"
+              >后台</el-link>
             </el-col>
           </el-row>
         </el-col>
         <!-- 自适应 -->
-        <el-col :span="6" class="hidden-md-and-up">
+        <el-col
+          :span="6"
+          class="hidden-md-and-up"
+        >
           <!-- 添加按钮,点击弹出drawer -->
-          <el-button @click="drawer = true" class="el-icon-s-fold movie_btn"></el-button>
+          <el-button
+            @click="drawer = true"
+            class="el-icon-s-fold movie_btn"
+          ></el-button>
         </el-col>
       </el-row>
-      <el-drawer class="drawer" size="60%" title="菜单" :visible.sync="drawer" :with-header="false" :modal-append-to-body="false">
+      <el-drawer
+        class="drawer"
+        size="60%"
+        title="菜单"
+        :visible.sync="drawer"
+        :with-header="false"
+        :modal-append-to-body="false"
+      >
         <div class="navbar">
-        <div class="navbar_head">
-          <a class="navbar__brand">
-            <img src="../assets/Avatar.jpg" alt="头像" class="navbar_logo" />
-            <strong class="navbar__title">泽宇的前端小站</strong>
-          </a>
-        </div>
-         <div class="navbar_main">
-           <div class="navbar_menu">
-             <ul class="menu_list">
-               <li class="menu_list_item">
-                 <a class="menu_link" href="/Welcome">首页</a>
-               </li>
-               <li class="menu_list_item">
-                 <a class="menu_link" href="/Project">项目</a>
-               </li>
-               <li class="menu_list_item">
-                 <a class="menu_link" href="/About">关于</a>
-               </li>
-             </ul>
-           </div>
-         </div>
+          <div class="navbar_head">
+            <a class="navbar__brand">
+              <img
+                src="../assets/Avatar.jpg"
+                alt="头像"
+                class="navbar_logo"
+              />
+              <strong class="navbar__title">泽宇的前端小站</strong>
+            </a>
+          </div>
+          <div class="navbar_main">
+            <div class="navbar_menu">
+              <ul class="menu_list">
+                <li class="menu_list_item">
+                  <a
+                    class="menu_link"
+                    href="/Welcome"
+                  >首页</a>
+                </li>
+                <li class="menu_list_item">
+                  <a
+                    class="menu_link"
+                    href="/Project"
+                  >项目</a>
+                </li>
+                <li class="menu_list_item">
+                  <a
+                    class="menu_link"
+                    href="/About"
+                  >关于</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </el-drawer>
     </el-header>
     <el-container>
-      <el-aside width="33%" class="hidden-sm-and-down">
+      <el-aside
+        width="33%"
+        class="hidden-sm-and-down"
+      >
         <el-row>
           <el-col :span="24">
-            <img class="tou_xiang" src="../assets/Avatar.jpg" alt="头像" />
+            <img
+              class="tou_xiang"
+              src="../assets/Avatar.jpg"
+              alt="头像"
+            />
           </el-col>
           <el-col :span="24">
-            <h1 style="font-size: 32px;color: white;margin-bottom: 0;">孙泽宇</h1>
-            <h1 style="font-size: 32px;color: white;margin-top: 0;">的个人网站</h1>
+            <p style="font-size: 30px;color: white;margin-bottom: 0;">孙泽宇的个人网站</p>
           </el-col>
           <el-col :span="24">
             <!-- 分割线 -->
@@ -69,7 +141,28 @@
           </el-col>
           <el-row>
             <el-col :span="24">
-              <div style="z-index:99;" id="weather-v2-plugin-standard"></div>
+              <h1 class="greeting">🎄 Happy Holidays! ❄️</h1>
+              <div class="snowperson">
+                <div class="topHead">
+                  <div class="leftEye"></div>
+                  <div class="rightEye"></div>
+                  <div class="nose"></div>
+                  <div class="mouth1"></div>
+                  <div class="mouth2"></div>
+                  <div class="mouth3"></div>
+                  <div class="mouth4"></div>
+                </div>
+                <div class="midBody">
+                  <div class="button1"></div>
+                  <div class="button2"></div>
+                  <div class="button3"></div>
+                  <div class="leftArm"></div>
+                  <div class="leftHand"></div>
+                  <div class="rightArm"></div>
+                  <div class="rightHand"></div>
+                </div>
+                <div class="bottomBody"></div>
+              </div>
             </el-col>
           </el-row>
           <el-col :span="24">
@@ -110,21 +203,7 @@ export default {
       drawer: false
     }
   },
-  mounted () {
-    window.WIDGET = {
-      CONFIG: {
-        layout: 1,
-        width: '400',
-        height: '150',
-        background: 1,
-        dataColor: 'FFFFFF',
-        borderRadius: 5,
-        key: 'OuM69a2jlH'
-      }
-    }
-  },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 
@@ -203,14 +282,14 @@ a {
 .navbar_logo {
   border-radius: 50%;
   height: 100%;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 .navbar_main {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 .navbar_menu {
   text-decoration: none;
-  font-weight:500;
+  font-weight: 500;
   overflow-x: hidden;
 }
 .menu_list {
@@ -219,7 +298,7 @@ a {
   padding-right: 0;
 }
 .menu_list_item {
-  margin: .25rem 0;
+  margin: 0.25rem 0;
 }
 .menu_link {
   color: #606770;
@@ -230,7 +309,201 @@ a {
   color: #007be2;
 }
 .rot_img {
-  width:100%;
+  width: 100%;
   height: 100%;
+}
+.greeting {
+  font-size: 1.75rem;
+  text-align: center;
+  font-family: "Homemade Apple", cursive;
+  color: gold;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  padding: 0;
+  animation: pulse 3s linear infinite;
+}
+.snowperson {
+  position: relative;
+  /*   border: 2px solid goldenrod; */
+  top: -50px;
+}
+
+.topHead {
+  width: 100px;
+  height: 100px;
+  background-color: snow;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  top: 95px;
+}
+
+.leftEye {
+  background-color: black;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.rightEye {
+  background-color: black;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+.nose {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 45px solid orange;
+  position: absolute;
+  top: 35px;
+}
+
+.mouth1 {
+  background-color: black;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 60px;
+  left: 25px;
+}
+
+.mouth2 {
+  background-color: black;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 65px;
+  left: 30px;
+}
+
+.mouth3 {
+  background-color: black;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 65px;
+  left: 38px;
+}
+
+.mouth4 {
+  background-color: black;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 60px;
+  left: 45px;
+}
+
+.leftArm {
+  background-color: brown;
+  width: 75px;
+  height: 10px;
+  position: relative;
+  z-index: 0;
+  transform: rotate(20deg);
+  top: 25px;
+  left: -55px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.leftHand {
+  width: 25px;
+  height: 10px;
+  background-color: brown;
+  position: relative;
+  left: -75px;
+  top: 3px;
+}
+
+.rightHand {
+  width: 25px;
+  height: 10px;
+  background-color: brown;
+  position: relative;
+  left: 185px;
+  top: -17px;
+}
+
+.rightArm {
+  background-color: brown;
+  width: 75px;
+  height: 10px;
+  position: relative;
+  z-index: 2;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  transform: rotate(-20deg);
+  top: 5px;
+  left: 115px;
+}
+
+.midBody {
+  width: 150px;
+  height: 150px;
+  background-color: snow;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  top: 75px;
+}
+
+.button1 {
+  background-color: black;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+.button2 {
+  background-color: black;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.button3 {
+  background-color: black;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 80px;
+  left: 50px;
+}
+
+.bottomBody {
+  width: 200px;
+  height: 200px;
+  background-color: snow;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  top: 18px;
+}
+.el-divider {
+  margin: 0;
+  padding: 0;
 }
 </style>

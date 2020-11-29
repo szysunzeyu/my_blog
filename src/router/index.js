@@ -22,6 +22,7 @@ export default new VueRouter({
     { path: '/Todo', component: resolve => require(['@/components/Todo'], resolve) },
     { path: '/Login', component: resolve => require(['@/components/Login'], resolve) },
     { path: '/ADjump', component: resolve => require(['@/components/ADjump'], resolve) },
-    { path: '/Register', component: resolve => require(['@/components/Register'], resolve) }
+    { path: '/Register', component: resolve => require(['@/components/Register'], resolve) },
+    { path: '/Editor', component: resolve => require(['@/components/Editor'], resolve) }
   ]
 })

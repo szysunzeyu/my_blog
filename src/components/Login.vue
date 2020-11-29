@@ -1,80 +1,77 @@
 <template>
-    <main>
-        <div class="container">
-        <form action="#" class="login-form">
-          <h2>请 登 录</h2>
-          <input
-            type="text"
-            name="username"
-            placeholder="用户名"
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="密码"
-          />
-          <button class="btn" type="submit">登录</button>
-        </form>
-        </div>
-    </main>
+  <main class="login_main">
+    <el-form class="login_form">
+      <el-form-item label="用户名">
+        <el-input v-model="input_name"></el-input>
+      </el-form-item>
+      <el-form-item label="密码">
+        <el-input  type="password" v-model="input_password"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button
+          class="login_btn"
+          @click="get_user_pwd()"
+        >登录</el-button>
+      </el-form-item>
+    </el-form>
+  </main>
 </template>
 
 <script>
 export default {
-
+  data () {
+    return {
+      name: '',
+      password: '',
+      input_name: '',
+      input_password: ''
+    }
+  },
+  methods: {
+    get_user_pwd () {
+      this.$http
+        .get('http://49.232.88.119:997/admin', {
+          params: { uname: this.input_name, upwd: this.input_password }
+        })
+        .then(res => {
+          if (res.data.length === 0) {
+            this.$message.error('用户名或名密码错误！')
+          } else {
+            this.$message({
+              message: '登陆成功！',
+              type: 'success'
+            })
+            this.$router.push('/Editor')
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  }
 }
 </script>
 
 <style>
-main{
-    margin: 0;
-}
-.container {
+.login_main {
+  background: #f4f4f4;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3453&q=80")
-    fixed no-repeat;
-  background-size: cover;
-  text-align: center;
+  align-items: center;
 }
-.login-form {
-  width: 240px;
-  height: 220px;
-  padding: 40px;
-  overflow: hidden;
-  box-shadow: 10px 10px 5px #888888;
-  border-radius: 18px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 100;
-  background: inherit;
+.login_form {
+  box-sizing: border-box;
+  padding: 25px;
+  background-color: #fff;
+  min-width: 17vw;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #dadada;
 }
-.login-form h2 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #3d5245;
-}
-.login-form input,
-.login-form button {
-  outline-style: none;
-  margin: 6px 0;
-  height: 36px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  padding: 0 14px;
-  color: #3d5245;
-}
-.btn {
-  background-color: rgba(57, 88, 69, 0.4);
-  transition: 0.4s;
-  cursor:pointer;
-}
-.login-form button:hover {
-  background-color: rgba(12, 80, 38, 0.67);
+.login_btn {
+  width: 100%;
 }
 </style>
