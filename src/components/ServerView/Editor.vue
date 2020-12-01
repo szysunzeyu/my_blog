@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-    <mavonEditor :value="value"/>
+    <mavonEditor :value="value" />
   </div>
 </template>
 
@@ -14,8 +14,10 @@ export default {
       value: ''
     }
   }
+
 }
 </script>
 
 <style>
+
 </style>

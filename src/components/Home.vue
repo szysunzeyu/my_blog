@@ -141,7 +141,7 @@
           </el-col>
           <el-row>
             <el-col :span="24">
-              <h1 class="greeting">🎄 Happy Holidays! ❄️</h1>
+              <h1 class="greeting">🎄 冬日快乐 ❄️</h1>
               <div class="snowperson">
                 <div class="topHead">
                   <div class="leftEye"></div>
@@ -324,7 +324,6 @@ a {
 }
 .snowperson {
   position: relative;
-  /*   border: 2px solid goldenrod; */
   top: -50px;
 }
 

@@ -231,7 +231,7 @@ window.onload = function () {
   }
 
   /*动画效果*/
-  @-webkit-keyframes Rotate {
+  @keyframes Rotate {
     from {
       transform: rotateZ(0);
     }

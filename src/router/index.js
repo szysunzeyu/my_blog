@@ -23,6 +23,14 @@ export default new VueRouter({
     { path: '/Login', component: resolve => require(['@/components/Login'], resolve) },
     { path: '/ADjump', component: resolve => require(['@/components/ADjump'], resolve) },
     { path: '/Register', component: resolve => require(['@/components/Register'], resolve) },
-    { path: '/Editor', component: resolve => require(['@/components/Editor'], resolve) }
+    {
+      path: '/Server',
+      component: resolve => require(['@/components/Server'], resolve),
+      redirect: '/Editor',
+      children: [
+        { path: '/Editor', component: resolve => require(['@/components/ServerView/Editor'], resolve) },
+        { path: '/DelBlog', component: resolve => require(['@/components/ServerView/DelBlog'], resolve) }
+      ]
+    }
   ]
 })

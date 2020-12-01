@@ -39,15 +39,4 @@
   background-attachment: fixed;
   background-size: cover;
 }
-#app {
-  max-width: 100vw;
-  max-height: 100vh;
-  scrollbar-width: none;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -ms-overflow-style: none;
-}
-#app::-webkit-scrollbar {
-  display: none; /* Chrome Safari */
-}
 </style>

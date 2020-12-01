@@ -1,5 +1,6 @@
 <template>
   <main class="login_main">
+    <h1 class="login_h1">后台登陆</h1>
     <el-form class="login_form">
       <el-form-item label="用户名">
         <el-input v-model="input_name"></el-input>
@@ -41,7 +42,7 @@ export default {
               message: '登陆成功！',
               type: 'success'
             })
-            this.$router.push('/Editor')
+            this.$router.push('/Server')
           }
         })
         .catch(err => {
@@ -62,6 +63,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.login_h1 {
+  position: fixed;
+  top:10%;
 }
 .login_form {
   box-sizing: border-box;
