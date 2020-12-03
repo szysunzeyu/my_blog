@@ -31,6 +31,9 @@ export default new VueRouter({
         { path: '/Editor', component: resolve => require(['@/components/ServerView/Editor'], resolve) },
         { path: '/DelBlog', component: resolve => require(['@/components/ServerView/DelBlog'], resolve) }
       ]
-    }
+    },
+    { path: '/notAdmin', component: resolve => require(['@/components/ServerView/notAdmin'], resolve) },
+    { path: '/404', component: resolve => require(['@/components/notFound'], resolve) },
+    { path: '*', redirect: '/404' }
   ]
 })

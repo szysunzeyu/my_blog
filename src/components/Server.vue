@@ -30,10 +30,25 @@ export default {
   data () {
     return {
       value: '',
-      isCollapse: false
+      isCollapse: false,
+      ServerAdmin: false
     }
   },
+  created () {
+    this.checkAdmin()
+  },
+  destroyed () {
+    this.$store.state.Admin = false
+  },
   methods: {
+    checkAdmin () {
+      this.ServerAdmin = this.$store.state.Admin
+      if (this.ServerAdmin === true) {
+        console.log('welcome admin!')
+      } else {
+        this.$router.push('/notAdmin')
+      }
+    },
     addblog () {
       this.$router.push('/Editor')
     },
@@ -44,7 +59,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .server {
   margin: 0;
   padding: 0;

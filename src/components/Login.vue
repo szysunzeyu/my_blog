@@ -38,6 +38,7 @@ export default {
           if (res.data.length === 0) {
             this.$message.error('用户名或名密码错误！')
           } else {
+            this.$store.state.Admin = true
             this.$message({
               message: '登陆成功！',
               type: 'success'
@@ -53,7 +54,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .login_main {
   background: #f4f4f4;
   width: 100vw;

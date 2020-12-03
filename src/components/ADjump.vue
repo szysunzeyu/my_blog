@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .all {
     width: 100vw;
     height: 100vh;

@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .project_card {
   box-sizing: border-box;
   margin:20px;

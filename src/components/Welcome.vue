@@ -90,7 +90,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .blog_card {
   box-sizing: border-box;
   margin: 3vh;
