@@ -79,7 +79,7 @@ export default {
         .then(geted => {
           this.blog_list = geted.data
         }).catch(err => {
-          console.log(err)
+           console.log(err)
         })
     },
     blog_check (id) {

@@ -40,6 +40,7 @@ export default {
       this.newBlogdate = year + '-' + month + '-' + day
     },
     getnewBlog (text, render) {
+      console.log(render)
       this.newBloghtml = render
     },
     sendNewBlog () {

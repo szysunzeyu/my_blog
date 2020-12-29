@@ -27,18 +27,22 @@
 export default {
   data () {
     return {
+      musicUrl: 'http://music.sunzeyu.xyz',
       project: [
         { id: 1, name: '仿网易云音乐', time: '2020-5-19', router: 'Music', src: 'http://free-cn-01.cdn.bilnn.com/ddimg/jfs/t1/135904/15/12097/13727/5f82b4a1E3cb74c40/d886054debc6f6df.jpg' },
-        { id: 2, name: 'Todo-App', time: '2020-10-11', router: 'Todo', src: 'http://free-cn-01.cdn.bilnn.com/ddimg/jfs/t1/118936/6/20007/15168/5f82b540E38724bc6/a0fda146892a9188.jpg' },
-        { id: 3, name: '注册界面', time: '2020-11-24', router: 'Register', src: 'https://some-1258503478.cos.ap-beijing.myqcloud.com/img/register_logo.jpg' },
-        { id: 4, name: '广告跳转页面', time: '2020-11-25', router: 'ADjump', src: 'https://icon.qiantucdn.com/20201114/0a859b0726b42740853e298cb2abad812' }
+        { id: 2, name: '注册界面', time: '2020-11-24', router: 'Register', src: 'https://some-1258503478.cos.ap-beijing.myqcloud.com/img/register_logo.jpg' },
+        { id: 3, name: '广告跳转页面', time: '2020-11-25', router: 'ADjump', src: 'https://icon.qiantucdn.com/20201114/0a859b0726b42740853e298cb2abad812' }
       ]
     }
   },
   methods: {
     check (item) {
       var name = item.router
-      this.$router.push('/' + name)
+      if (item.id === 1) {
+        window.location.href = this.musicUrl
+      } else {
+        this.$router.push('/' + name)
+      }
     }
   }
 }

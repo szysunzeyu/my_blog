@@ -18,8 +18,6 @@ export default new VueRouter({
         { path: '/Blog', component: resolve => require(['@/components/Blog'], resolve) }
       ]
     },
-    { path: '/Music', component: resolve => require(['@/components/Music'], resolve) },
-    { path: '/Todo', component: resolve => require(['@/components/Todo'], resolve) },
     { path: '/Login', component: resolve => require(['@/components/Login'], resolve) },
     { path: '/ADjump', component: resolve => require(['@/components/ADjump'], resolve) },
     { path: '/Register', component: resolve => require(['@/components/Register'], resolve) },

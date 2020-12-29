@@ -141,6 +141,18 @@
           </el-col>
           <el-row>
             <el-col :span="24">
+              <div class="snowflake1 snowflake">❄</div>
+              <div class="snowflake2 snowflake">❄</div>
+              <div class="snowflake3 snowflake">❄</div>
+              <div class="snowflake4 snowflake">❄</div>
+              <div class="snowflake5 snowflake">❄</div>
+              <div class="snowflake6 snowflake">❄</div>
+              <div class="snowflake7 snowflake">❄</div>
+              <div class="snowflake8 snowflake">❄</div>
+              <div class="snowflake9 snowflake">❄</div>
+              <div class="snowflake10 snowflake">❄</div>
+              <div class="snowflake11 snowflake">❄</div>
+              <div class="snowflake12 snowflake">❄</div>
               <h1 class="greeting">🎄 冬日快乐 ❄️</h1>
               <div class="snowperson">
                 <div class="topHead">
@@ -187,7 +199,7 @@
       <el-row>
         <el-col :span="24">
           <a>
-            <p style="text-align: center;color: white;">Hello World! || ©鲁ICP备:20006692号</p>
+            <p style="text-align: center;color: white;">Hello World! || ©鲁ICP备2020047368号</p>
           </a>
         </el-col>
       </el-row>
@@ -311,6 +323,70 @@ a {
 .rot_img {
   width: 100%;
   height: 100%;
+}
+.snowflake {
+  position: absolute;
+  color: snow;
+  opacity: 0;
+}
+.snowflake1 {
+  left: 35px;
+  animation: snow 10s ease infinite;
+}
+.snowflake2 {
+  left: 50px;
+  animation: snow 6s ease infinite;
+  animation-delay: 3s;
+}
+.snowflake3 {
+  left: 77px;
+  animation: snow 4s ease infinite;
+  animation-delay: 1s;
+}
+.snowflake4 {
+  left: 120px;
+  animation: snow 8s ease infinite;
+  animation-delay: 1s;
+}
+.snowflake5 {
+  left: 140px;
+  animation: snow 8s ease infinite;
+  animation-delay: 2s;
+}
+.snowflake6 {
+  left: 180px;
+  animation: snow 6s ease infinite;
+  animation-delay: 3s;
+}
+.snowflake7 {
+  left: 225px;
+  animation: snow 7s ease infinite;
+  animation-delay: 1s;
+}
+.snowflake8 {
+  left: 255px;
+  animation: snow 9s ease infinite;
+  animation-delay: 6s;
+}
+.snowflake9 {
+  left: 300px;
+  animation: snow 6s ease infinite;
+  animation-delay: 6s;
+}
+.snowflake10 {
+  left: 310px;
+  animation: snow 7s ease infinite;
+  animation-delay: 2s;
+}
+.snowflake11 {
+  left: 322px;
+  animation: snow 8s ease infinite;
+  animation-delay: 3s;
+}
+.snowflake12 {
+  left: 50px;
+  animation: snow 8s ease infinite;
+  animation-delay: 3s;
 }
 .greeting {
   font-size: 1.75rem;
@@ -504,5 +580,33 @@ a {
 .el-divider {
   margin: 0;
   padding: 0;
+}
+@keyframes snow {
+  0% {
+    top: 0;
+    transform-origin: center;
+    opacity: 0;
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(25px);
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, 200deg);
+    opacity: 1;
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(50px);
+    transform-origin: center;
+    opacity: 0;
+  }
+  100% {
+    top: 100%;
+  }
 }
 </style>
