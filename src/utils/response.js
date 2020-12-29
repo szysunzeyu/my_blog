@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: "http://49.232.88.119:997",
+  baseURL: 'http://49.232.88.119:997',
   timeout: 5000
-});
+})
 // 全局请求拦截
 // 所有的网络请求都会先走这个方法
 instance.interceptors.request.use(
@@ -25,7 +25,7 @@ instance.interceptors.response.use(
   }
 )
 // get方法
-export function get(url,params) {
+export function get (url, params) {
   return instance.get(url, {
     params
   })

@@ -34,7 +34,7 @@ export default {
 .blog {
   background-color: #fff;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 20px;
   border-radius: 25px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
   }
