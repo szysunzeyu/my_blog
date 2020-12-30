@@ -12,12 +12,12 @@
     <el-pagination
       style="text-align: center"
       background
-      :pager-count="5"
+      :page-size="4"
       @current-change="currentChange"
       layout="prev, pager, next"
       @prev-click="pre_blog"
       @next-click="next_blog"
-      :total="50">
+      :total="maxPage">
     </el-pagination>
   </main>
 </template>
@@ -28,11 +28,13 @@ export default {
   data () {
     return {
       blog_list: '',
-      blog_page: ''
+      blog_page: '',
+      maxPage: ''
     }
   },
   mounted () {
     this.blog_item()
+    this.getMaxPage()
     if (this.isMobile()) {
       alert('建议使用PC端浏览')
     }
@@ -46,6 +48,13 @@ export default {
       get('/blog')
         .then(geted => {
           this.blog_list = geted.data
+        }).catch(() => {})
+    },
+    // 获取页数最大值
+    getMaxPage () {
+      get('/blog_maxPage')
+        .then(geted => {
+          this.maxPage = geted.data[0]['MAX(blog_page)'] * 4
         }).catch(() => {})
     },
     // 点击页数

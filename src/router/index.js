@@ -10,9 +10,9 @@ export default new VueRouter({
     {
       path: '/Home',
       component: Home,
-      redirect: '/Welcome',
+      redirect: '/blogCard',
       children: [
-        { path: '/Welcome', component: resolve => require(['@/components/Welcome'], resolve) },
+        { path: '/blogCard', component: resolve => require(['@/components/blogCard'], resolve) },
         { path: '/About', component: resolve => require(['@/components/About'], resolve) },
         { path: '/Project', component: resolve => require(['@/components/Project'], resolve) },
         { path: '/Blog', component: resolve => require(['@/components/Blog'], resolve) }
