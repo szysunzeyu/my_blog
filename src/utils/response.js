@@ -30,3 +30,7 @@ export function get (url, params) {
     params
   })
 }
+// post方法
+export function post (url, data) {
+  return instance.post(url, data)
+}

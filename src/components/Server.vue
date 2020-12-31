@@ -2,7 +2,7 @@
   <div class="server">
     <el-row class="server_main">
       <el-col :span="4" class="server_left">
-        <h5>后台管理界面</h5>
+        <h2>后台管理界面</h2>
         <el-menu
           default-active="1"
           class="Server_menu"
@@ -17,6 +17,7 @@
             <span slot="title">删除文章</span>
           </el-menu-item>
         </el-menu>
+        <el-button type="danger" @click="loginOut">退出登录</el-button>
       </el-col>
       <el-col :span="20">
         <router-view></router-view>
@@ -26,27 +27,29 @@
 </template>
 
 <script>
+import { get } from '@/utils/response'
 export default {
   data () {
     return {
       value: '',
-      isCollapse: false,
-      ServerAdmin: false
+      token: '',
+      isCollapse: false
     }
   },
   created () {
-    this.checkAdmin()
-  },
-  destroyed () {
-    this.$store.state.Admin = false
+    this.checkToken()
   },
   methods: {
-    checkAdmin () {
-      this.ServerAdmin = this.$store.state.Admin
-      if (this.ServerAdmin === true) {
-        console.log('welcome admin!')
-      } else {
+    checkToken () {
+      this.token = localStorage.getItem('token')
+      if (this.token === null) {
         this.$router.push('/notAdmin')
+      } else {
+        get('/admin', { tokenKey: this.token }).then((res) => {
+          if (res.data.status !== 200) {
+            this.$router.push('/notAdmin')
+          }
+        }).catch(() => {})
       }
     },
     addblog () {
@@ -54,6 +57,16 @@ export default {
     },
     delblog () {
       this.$router.push('/DelBlog')
+    },
+    loginOut () {
+      this.$message({
+        message: '退出成功，即将返回登录界面',
+        type: 'success'
+      })
+      setTimeout(() => {
+        localStorage.removeItem('token')
+        this.$router.push('/Login')
+      }, 1500)
     }
   }
 }

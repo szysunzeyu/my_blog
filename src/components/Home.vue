@@ -27,7 +27,7 @@
               <el-link
                 icon="el-icon-s-home"
                 type="primary"
-                href="/Welcome"
+                href="/blogCard"
               >首页</el-link>
             </el-col>
             <el-col
@@ -98,7 +98,7 @@
                 <li class="menu_list_item">
                   <a
                     class="menu_link"
-                    href="/Welcome"
+                    href="/blogCard"
                   >首页</a>
                 </li>
                 <li class="menu_list_item">

@@ -10,7 +10,7 @@ module.exports = {
           // 网页包的路径将应用程序输出到prerender
           staticDir: path.join(__dirname, 'dist'),
           // Routes to render 对应自己router
-          routes: ['/', '/Home', '/Welcome', '/About', '/Project'],
+          routes: ['/', '/Home', '/blogCard', '/About', '/Project', '/Login'],
           renderer: new Renderer({
             inject: {
               foo: 'bar'

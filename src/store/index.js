@@ -5,8 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    Blog_id: '',
-    Admin: false
+    Blog_id: ''
   },
   mutations: {
   },

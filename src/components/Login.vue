@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import { post, get } from '@/utils/response'
+
 export default {
   data () {
     return {
@@ -28,27 +30,34 @@ export default {
       input_password: ''
     }
   },
+  mounted () {
+    this.checkToken()
+  },
   methods: {
+    checkToken () {
+      var token = localStorage.getItem('token')
+      if (token !== null) {
+        get('/admin', { tokenKey: token }).then((res) => {
+          if (res.data.data.status === 200) {
+            this.$router.push('/Server')
+          }
+        }).catch(() => {})
+      }
+    },
     get_user_pwd () {
-      this.$http
-        .get('http://49.232.88.119:997/admin', {
-          params: { uname: this.input_name, upwd: this.input_password }
-        })
+      post('/admin', { uname: this.input_name, upwd: this.input_password })
         .then(res => {
           if (res.data.length === 0) {
             this.$message.error('用户名或名密码错误！')
           } else {
-            this.$store.state.Admin = true
+            localStorage.setItem('token', res.data.tokenKey)
             this.$message({
               message: '登陆成功！',
               type: 'success'
             })
             this.$router.push('/Server')
           }
-        })
-        .catch(err => {
-          console.log(err)
-        })
+        }).catch(() => {})
     }
   }
 }

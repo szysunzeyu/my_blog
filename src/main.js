@@ -8,6 +8,8 @@ import './assets/animate.min.css'
 import 'element-ui/lib/theme-chalk/base.css'
 import axios from 'axios'
 import store from './store'
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies)
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 new Vue({
